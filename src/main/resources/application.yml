@@ -1,0 +1,22 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: payment
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/payment-svc
+    username: root
+    password: root
+
+  kafka:
+    bootstrap-servers: localhost:29092
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+kafka:
+  topics:
+    order-payment: order-payment-topic
